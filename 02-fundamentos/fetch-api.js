@@ -1,16 +1,17 @@
 // Fetch
+fetch('https://pokeapi.co/api/v2/pokemon/') // Consumimos el API
+    .then( res => res.json() ) // Como el api es una informacion que viene en JSon la transformamos
+    .then( data => { // Aqui volvemos a leer la informacion
+        // console.log(data.results);
+        data.results.forEach( element => {
+            console.log(element.name);
+        })
+    })
+    .catch( error => console.log(error));
 
-// fetch('https://pokeapi.co/api/v2/pokemon/') // Consumimos el API
-//     .then( res => res.json() ) // Como el api es una informacion que viene en JSon la transformamos
-//     .then( data => { // Aqui volvemos a leer la informacion
-//         // console.log(data.results);
-//         data.results.forEach( element => {
-//             console.log(element.name);
-//         })
-//     })
-//     .catch( error => console.log(error));
 
 
+// API Rick and morty
 fetch('https://rickandmortyapi.com/api/character')
     .then( res => res.json() )
     .then( data => {
